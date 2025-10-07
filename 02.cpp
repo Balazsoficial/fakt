@@ -1,6 +1,4 @@
-//
-// Created by szoldaticsnagybalazs on 2025.09.22.
-//
+
 #include<iostream>
 using namespace  std;
 
