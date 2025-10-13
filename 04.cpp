@@ -1,5 +1,5 @@
 //
-// Created by szoldaticsnagybalazs on 2025.09.29.
+// Created by Balazsofficial on 2025.09.29.
 //
 #include<iostream>
 

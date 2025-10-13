@@ -1,5 +1,5 @@
 //
-// Created by szoldaticsnagybalazs on 2025.09.29.
+// Created by Balazsofficial on 2025.09.29.
 //
 #include <cmath>
 #include <iostream>
@@ -23,6 +23,7 @@ int main() {
     cin.ignore(256, '\n');
     getline(cin, s);
     cout << s << endl;
+
 
 
 }
