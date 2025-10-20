@@ -1,6 +1,7 @@
 
 // Created by Balazsofficial on 2025.10.13.
 //
+#include <algorithm>
 #include <iostream>
 typedef int elemtip;
 constexpr int MAXN=100;
@@ -131,14 +132,54 @@ void szetvalogatas(int n, sorozattip x, int &nn, sorozattip &xx, int &nnn , soro
         }
     }
 }
+
+
+
+//----------------------------------------------------------------
+void masol(int n,sorozattip s,int &nn, sorozattip &ss) {
+    nn=n;
+    for (int i=1; i<=n; i++) {
+        ss[i]=s[i];
+    }
+}
+void cseres(int n, sorozattip &x) {
+    for (int i=1; i<=n-1; i++) {
+        for(int j=i+1; j<=n; j++) {
+            if (x[i]<x[j]) {
+                swap(x[i],x[j]);
+            }
+        }
+    }
+}
+void minimumelvu(int n, sorozattip &x) {
+    for (int i=1; i<=n-1; i++) {
+        int mini=i;
+        for (int j=i+1; j<=n; j++) {
+            if (x[j]<x[mini])
+                mini=j;
+            swap(x[i],x[mini]);
+        }
+    }
+
+}
+void buborekos(int n,sorozattip & x) {
+    for (int i=n-1; i>=1; i--) {
+        for (int j=1; j<=i; j++) {
+            if (x[j]>x[j+1]) { swap(x[j],x[j+1]); }
+        }
+    }
+}
+bool sorrend(elemtip a, elemtip b) {
+    return (a>b);
+}
 int main() {
 
     sorozattip s, s1,s2;
     int db, db1,db2;
-    sorozatbe(db,s);
-    sorozatki(db,s);
+  //  sorozatbe(db,s);
+   // sorozatki(db,s);
     elemtip ossz;
-
+/*
     osszegszamitas(db,s,ossz);
     cout << "összegük  " << ossz << endl;
     bool van;
@@ -173,6 +214,23 @@ int main() {
     sorozatki(db1,s1);
     cout << "paratlanok : ";
     sorozatki(db2,s2);
+*/
+
+    sorozatbe(db,s);
+    masol(db,s,db1,s1);
+    cseres(db,s);
+    sorozatki(db,s);
+    masol(db1,s1,db,s);
+    minimumelvu(db,s);
+    sorozatki(db,s);
+
+    masol(db1,s1,db,s);
+    buborekos(db,s);
+    sorozatki(db,s);
+    masol(db1,s1,db,s);
+    sort(s+1,s+db+1,sorrend);
+    sorozatki(db,s);
+
 
 
 
