@@ -34,5 +34,14 @@ int main() {
         cout << t[i].name << " " << t[i].szulev  <<"    "<<t[i].atlag<< endl;
         cout << n<<endl;
     }
+    //kiiras
+    ofstream fout("S:/11/FAKT/cpp/as1d.txt");
+    for(int i=1;i<=n;i++) {
+        fout << t[i].name << " " << t[i].szulev  <<"    "<<t[i].atlag<< endl;
+    }
+  fstream fout2("S:/11/FAKT/cpp/as3d.txt", ios::app);
+    fout2<<"HALOooooooooo"<<endl;
+    fout.close();
 
+    fout2.close();
 }

@@ -6,9 +6,7 @@
 using namespace std;
 
 int main() {
-    long long a =0;
-    long long int count =0;
-   long long  int i=1;
+    long long a =0 , count =0;
     for (long long int j=1; j<=530000; j+=2) {
         a+=j*j;
         count++;
