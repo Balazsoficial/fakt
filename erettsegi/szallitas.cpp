@@ -26,6 +26,5 @@ int main() {
         }
 
     }
-    cout <<endl;
     cout <<"A szukseges dobozok szama: " << dobozok;
 }

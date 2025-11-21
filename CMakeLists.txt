@@ -4,5 +4,6 @@ project(cpp)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXE_LINKER_FLAGS "-static")
-add_executable(cpp         erettsegi/szallitas.cpp)
+add_executable(cpp        erettsegi/letra.cpp
+        erettsegi/befozes.cpp)
 
