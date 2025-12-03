@@ -10,15 +10,7 @@ int x,y,xbe,ybe,xvegul,yvegul;
 string taj;
 
 vector <string> sziget;
-struct buffer {
-    int x;
-    int y;
-};
-struct current {
-    int x;
-    int y;
 
-};
 int main() {
     x=y=xbe=ybe=yvegul=xvegul=0;
     ifstream fin;
