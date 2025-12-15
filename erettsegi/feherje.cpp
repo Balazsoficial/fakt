@@ -98,7 +98,37 @@ void f5() {
             e=i+1;
 
         }
+        i++;
     }
+    ofstream fout("S:/11/FAKT/cpp/eredmeny.txt",ios::app);
+    if (lh!=bsadb)
+    {
+        cout << "A leghosszabb lanc kezdete = " << le << ", vege=" << lu << ", hossza=" <<lh<<endl;
+    fout << "A leghosszabb lanc kezdete = " << le << ", vege=" << lu << ", hossza=" <<lh<<endl;
+}else {
+        cout << "nem hasadt a lanc"<<endl;
+        fout << "nem hasadt a lanc"<<endl;
+    }
+    fout.close();
+}
+void f6() {
+    cout << "6.feladat" <<endl;
+    int i=1,cidb=0;
+    while (i<=bsadb-1 &&!(bsa[i]=='R' && (bsa[i+1]=='A' ||bsa[i+1]=='V'))) {
+        if(bsa[i]=='C')
+        cidb++;
+        i++;
+    }
+    ofstream fout("S:/11/FAKT/cpp/eredmeny.txt",ios::app);
+    if (i<=bsadb-1) {
+        cout << "Az elso feherjelanc resletben " << cidb << " db cisztein van." << endl;
+        fout << "Az elso feherjelanc resletben " << cidb << " db cisztein van." << endl;
+    }
+    else {
+        cout << "nem volt elso lanc."<<endl;
+        fout << "nem volt elso lanc."<<endl;
+    }
+    fout.close();
 }
 int main() {
     f1();
