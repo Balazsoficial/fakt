@@ -125,12 +125,50 @@ void f5() {
     fout << "</table>" << endl;
     fout.close();
 }
+
+void f6() {
+    struct kiad {
+        string nev;
+        int db,hanyszor; //elsonel tobbszor = hanyszor //db : elso kiadas dbszama
+
+    }kk[n+1];
+
+    int kkdb =0;
+
+    for (int i=0;i<=n;i++) {
+        int j=1;
+        while (j<=kkdb && kk[j].nev != k[i].nev) {
+            j++;
+        }
+        if (j<=kkdb) {
+            if (k[i].db>kk[j].db)
+                kk[j].hanyszor++;
+        }
+        else {
+                kkdb++;
+                kk[kkdb].nev=k[i].nev;
+                kk[kkdb].db=k[i].db;
+                kk[kkdb].hanyszor=0;
+            }
+
+    }
+    cout << "6. feladat" << endl;
+    for (int i=1;i<=kkdb;i++) {
+        if (kk[i].hanyszor>=2) {
+            cout << kk[i].nev <<endl;
+        }
+
+    }
+
+
+}
 int main() {
     f1();
     f2();
     f3();
     f4();
     f5();
+    f6();
 
    // cout << n << endl;
 
