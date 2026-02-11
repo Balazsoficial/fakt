@@ -10,14 +10,13 @@ using namespace  std;
 
 struct tabla {
  //nem 0tol
- string sor[27] ={};
- string oszlop[27] ={};
+ string sor[27]={};
 
 };
 
 typedef tabla tabla;
 
-tabla t;
+tabla t[27];
 
 int main() {
  setlocale(LC_ALL, "");
@@ -45,9 +44,13 @@ int main() {
  string kulcs;
  cout << "Irj be egy kulcsszot" << endl;
  cin >> kulcs;
+
+ //szarrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
  for ( int i =0; i<kulcs.length();i++) {
   nyilt[i] = toupper(kulcs[i]);
  }
+
+
 string Kulcs_szoveg ="";
  for (int i = 0; i <= nyilt.length()/kulcs.length(); i++) {
    Kulcs_szoveg += kulcs;
@@ -66,10 +69,20 @@ string Kulcs_szoveg ="";
  for (int j = 1 ;j<=26 ;j++)
  {
  getline(fin,s);
+
  for (int i =1; i<=26;i++) {
-   t.sor[i] = s[i-1];
+   t[j].sor[i] = s[i-1];
  }
  }
+
+ //betu-40
+ //f6
+string Kodolt_szoveg;
+ for (int i =0; i<=nyilt.length();i++) {
+  cout << t[nyilt[i]-64].sor[Kulcs_szoveg[i]-64] ;
+  Kodolt_szoveg += t[nyilt[i]-64].sor[Kulcs_szoveg[i]-64];
+ }
+
 
 
 
