@@ -4,6 +4,7 @@
 #include<iostream>
 #include<fstream>
 #include <iomanip>
+#include <set>
 using namespace std;
 
 
@@ -101,6 +102,24 @@ void f6() {
         cout << " Nem szerepel a bekért rendszámú jármű" << endl;
     }
 }
+void f7() {
+    ofstream fout("S:/11/FAKT/cpp/ido.txt");
+    set<string> r;
+    for (int i=1;i<=db;i++) {
+        if (r.count(t[i].rendszam)==0) {
+            fout <<t[i].rendszam << " " << t[i].ora << " " << t[i].perc << " ";
+            int j=db;
+            while (t[j].rendszam!=t[i].rendszam) {
+                j--;
+            }
+            fout << t[j].ora << " " << t[j].perc << " ";
+            r.insert(t[i].rendszam);
+
+
+        }
+    }
+
+}
 int main() {
     f1();
     f2();
@@ -108,4 +127,5 @@ int main() {
     f4();
     f5();
     f6();
+    f7();
 }
